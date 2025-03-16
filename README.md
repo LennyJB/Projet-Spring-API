@@ -2,6 +2,7 @@
 
 Remplir le .properties avec ça :
 
+```
 spring.application.name=ProjetSpringAPI
 server.port=8081
 spring.datasource.url=jdbc:mysql://localhost:3306/projet_spring_api
@@ -19,6 +20,7 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 spring.flyway.locations=classpath:db/migration,classpath:db/migration/testdata
 spring.flyway.enabled=true
 spring.flyway.out-of-order=true
+```
 
 Ensuite il faut créé la base de données mysql avec comme nom projet_spring_api.
 
