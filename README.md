@@ -27,3 +27,7 @@ Ensuite il faut créé la base de données mysql avec comme nom projet_spring_ap
 Pour finir lancer l'application et tout devrait marcher.
 
 Les requêtes possibles sont dans le dossier Collection-BRUNO.
+
+Pour les requêtes il faudra mettre le token créé lors du login avec un utilisateur par exemple pour l'utilisateur UserCrud pour toutes les requêtes CRUD.
+
+Les mots de passe des 3 utilisateurs créés sont "password".
