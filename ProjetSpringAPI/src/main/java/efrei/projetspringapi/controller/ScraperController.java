@@ -17,7 +17,7 @@ public class ScraperController {
     }
 
     @PostMapping("/fetch/{breed}")
-    @PreAuthorize("hasAuthority('SCRAPING')")
+    @PreAuthorize("hasAuthority('SCRAPER')")
     public ResponseEntity<DogImage> fetchAndStoreRandomDogImage(@PathVariable String breed) {
         return ResponseEntity.ok(dogService.fetchAndStoreRandomDogImage(breed));
     }

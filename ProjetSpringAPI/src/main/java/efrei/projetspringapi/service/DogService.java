@@ -28,12 +28,18 @@ public class DogService {
         this.restClient = RestClient.create();
     }
 
-    public Map<String, String> requestRandomDog() {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth.getAuthorities().stream().noneMatch(a -> a.getAuthority().equals("REBOND"))) {
-            throw new AccessDeniedException("Accès refusé : Vous n'avez pas le rôle REBOND");
-        }
+    public Map<String, Object> requestAllBreeds() {
+        return restClient.get()
+                .uri(uriBuilder -> uriBuilder
+                        .scheme("https")
+                        .host("dog.ceo")
+                        .path("/api/breeds/list/all")
+                        .build())
+                .retrieve()
+                .body(new ParameterizedTypeReference<Map<String, Object>>() {});
+    }
 
+    public Map<String, String> requestRandomDog() {
         return restClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .scheme("https")
@@ -45,11 +51,6 @@ public class DogService {
     }
 
     public DogImage fetchAndStoreRandomDogImage(String breed) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth.getAuthorities().stream().noneMatch(a -> a.getAuthority().equals("SCRAPER"))) {
-            throw new AccessDeniedException("Accès refusé : Vous n'avez pas le rôle SCRAPER");
-        }
-
         Map<String, String> response = restClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .scheme("https")

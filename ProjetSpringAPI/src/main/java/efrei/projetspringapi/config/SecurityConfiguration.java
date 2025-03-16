@@ -72,7 +72,7 @@ public class SecurityConfiguration {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Application de la config CORS
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("api/rebond/**").hasRole("REBOND")
-                        .requestMatchers("api/scapper/**").hasRole("SCRAPER")
+                        .requestMatchers("api/scraper/**").hasRole("SCRAPER")
                         .requestMatchers("api/crud/**").hasRole("CRUD")
                         // Accès public a certaines routes, notamment la page d'accueil, l'inscription et le login
                         .requestMatchers("/", "/index", "/test", "/test/*", "/api/users/register", "/api/login").permitAll()
