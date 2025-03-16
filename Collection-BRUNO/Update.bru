@@ -1,0 +1,21 @@
+meta {
+  name: Update
+  type: http
+  seq: 11
+}
+
+put {
+  url: http://localhost:8081/api/crud/dog-breeds/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+    "breed": "English Bulldog"
+  }
+}

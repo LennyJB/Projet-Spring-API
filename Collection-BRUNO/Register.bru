@@ -1,0 +1,25 @@
+meta {
+  name: Register
+  type: http
+  seq: 3
+}
+
+post {
+  url: Http://localhost:8081/api/users/register
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "test",
+    "password": "password",
+    "enabled": true
+  }
+}
+
+body:form-urlencoded {
+  username: test
+  password: password
+  enabled: true
+}
