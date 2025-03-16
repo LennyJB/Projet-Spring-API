@@ -25,3 +25,5 @@ spring.flyway.out-of-order=true
 Ensuite il faut créé la base de données mysql avec comme nom projet_spring_api.
 
 Pour finir lancer l'application et tout devrait marcher.
+
+Les requêtes possibles sont dans le dossier Collection-BRUNO.
